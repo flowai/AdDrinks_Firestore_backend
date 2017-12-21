@@ -1,7 +1,5 @@
 package de.addrinks.backend.firestore;
 
-import java.io.IOException;
-
 public interface DatabaseController {
 	static final String PROJECTID = "addrinks-dev";
 	
