@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
@@ -22,6 +23,13 @@ public class RESTClientController {
 
 	@Autowired
 	AbonnementService abonnementService;
+	
+	
+	@RequestMapping("/")
+    @ResponseBody
+    public String healthCheck() {
+	       return "RESTClient is up and running";
+	}
 	
     //----------- createAbonnement -------
 	/*

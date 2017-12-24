@@ -2,6 +2,8 @@ package de.addrinks.backend.firestore;
 
 import java.io.IOException;
 
+import org.springframework.stereotype.Service;
+
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.firestore.CollectionReference;
 import com.google.cloud.firestore.DocumentReference;
@@ -10,6 +12,7 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.cloud.FirestoreClient;
 
+@Service
 public class FirestoreControllerImpl implements DatabaseController {
 	// Use the application default credentials
 	GoogleCredentials credentials;
