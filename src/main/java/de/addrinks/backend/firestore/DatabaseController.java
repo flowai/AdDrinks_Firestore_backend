@@ -1,7 +1,7 @@
 package de.addrinks.backend.firestore;
 
 public interface DatabaseController {
-	static final String PROJECTID = "addrinks-dev";
+	static final String PROJECTID = "addrinks-developer";
 	
 	static final String PRODUKTTABELLE = "produkte";
 	static final String KATEGORIETABELLE = "kategorie";

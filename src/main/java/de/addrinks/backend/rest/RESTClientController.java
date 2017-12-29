@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -18,7 +19,6 @@ import de.addrinks.backend.firestore.service.AbonnementService;
 import de.addrinks.backend.firestore.entities.Abonnement;
 
 @RestController
-@RequestMapping("/")
 public class RESTClientController {
 
 	@Autowired
@@ -26,10 +26,21 @@ public class RESTClientController {
 	
 	
 	@RequestMapping("/")
-    @ResponseBody
     public String healthCheck() {
 	       return "RESTClient is up and running";
 	}
+	
+	  /**
+	   * (Optional) App Engine health check endpoint mapping.
+	   * @see <a href="https://cloud.google.com/appengine/docs/flexible/java/how-instances-are-managed#health_checking"></a>
+	   * If your app does not handle health checks, a HTTP 404 response is interpreted
+	   *     as a successful reply.
+	   */
+	  @RequestMapping("/_ah/health")
+	  public String healthy() {
+	    // Message body required though ignored
+	    return "Still surviving.";
+	  }
 	
     //----------- createAbonnement -------
 	/*

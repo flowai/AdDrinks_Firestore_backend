@@ -1,6 +1,7 @@
 package de.addrinks.backend.firestore;
 
 import java.io.IOException;
+import java.util.List;
 
 import org.springframework.stereotype.Service;
 
@@ -36,7 +37,11 @@ public class FirestoreControllerImpl implements DatabaseController {
 			    .setProjectId(PROJECTID)
 			    .build();
 		
-		FirebaseApp.initializeApp(options);
+
+	    List<FirebaseApp> firebaseApps = FirebaseApp.getApps();
+	    if(firebaseApps==null || firebaseApps.isEmpty()){
+	        FirebaseApp.initializeApp(options);
+	    }
 		
 		db = FirestoreClient.getFirestore();
 	}
