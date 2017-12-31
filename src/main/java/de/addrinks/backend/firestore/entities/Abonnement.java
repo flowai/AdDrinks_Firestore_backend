@@ -1,10 +1,11 @@
 package de.addrinks.backend.firestore.entities;
 
-import java.sql.Timestamp;
+import java.util.Date;
+
 
 public class Abonnement {
-	private Timestamp start;
-	private Timestamp ende;
+	private Date start;
+	private Date ende;
 	
 	private int abokategorie;
 	
@@ -12,19 +13,19 @@ public class Abonnement {
 		//Must have Firestore prerequisite
 	}
 
-	public Timestamp getStart() {
+	public Date getStart() {
 		return start;
 	}
 
-	public void setStart(Timestamp start) {
+	public void setStart(Date start) {
 		this.start = start;
 	}
 
-	public Timestamp getEnde() {
+	public Date getEnde() {
 		return ende;
 	}
 
-	public void setEnde(Timestamp ende) {
+	public void setEnde(Date ende) {
 		this.ende = ende;
 	}
 

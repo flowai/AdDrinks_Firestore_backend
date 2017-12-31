@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.firestore.CollectionReference;
 import com.google.cloud.firestore.DocumentReference;
+import com.google.cloud.firestore.QuerySnapshot;
 
 import de.addrinks.backend.firestore.FirestoreControllerImpl;
 import de.addrinks.backend.firestore.entities.Abonnement;
@@ -23,6 +24,8 @@ public class AbonnementService extends FirestoreControllerImpl {
 		return result;
 	}
 	
-	
+	public DocumentReference getAbonnementById(String Id){
+		return this.getCollectionReference(ABONNEMENTTABELLE).document(Id);
+	}
 
 }
