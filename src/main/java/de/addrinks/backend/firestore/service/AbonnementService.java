@@ -27,5 +27,9 @@ public class AbonnementService extends FirestoreControllerImpl {
 	public DocumentReference getAbonnementById(String Id){
 		return this.getCollectionReference(ABONNEMENTTABELLE).document(Id);
 	}
+	
+	public CollectionReference getAbonnements(){
+		return this.getCollectionReference(ABONNEMENTTABELLE);
+	}
 
 }
